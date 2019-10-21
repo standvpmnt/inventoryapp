@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_20_190949) do
+ActiveRecord::Schema.define(version: 2019_10_21_091850) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cobas_reagents", force: :cascade do |t|
+    t.string "test_code"
+    t.integer "reagent_bottle"
+    t.string "test_short_name"
+    t.string "reagent_name"
+    t.integer "test_nos"
+    t.integer "expiry_month"
+    t.integer "expiry_year"
+    t.string "lot_no"
+    t.string "unique_identifier"
+    t.datetime "ho_in_time"
+    t.string "ho_in_employee"
+    t.datetime "ho_out_time"
+    t.string "ho_out_employee"
+    t.datetime "lab_in_time"
+    t.string "lab_location"
+    t.string "lab_in_employee"
+    t.datetime "lab_use_time"
+    t.string "lab_use_employee"
+    t.datetime "lab_discard_time"
+    t.string "lab_discard_employee"
+    t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
