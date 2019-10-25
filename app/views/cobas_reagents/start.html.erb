@@ -1,0 +1,8 @@
+<h1>Scan the QR code</h1>
+<h2><%= "Hello #{current_user.name} from #{current_user.location}" %></h2>
+<%= form_with(url: cobas_reagent_entry_path, method: "get", local: true) do %>
+	<!-- good for refactoring/partial/helper -->
+	<div><%= label_tag ("Check this: ")%>
+	<%= text_field_tag :bcode,'', autofocus: true %></div>
+	<%= submit_tag ("Search") %>
+<% end %>

@@ -1,3 +1,8 @@
-<h1>This is what you get when you log-in</h1>
-
+<div>
 <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+</div>
+<br/><br/>
+<div><h2>Choose which inventory you would like to manage<h2></div>
+<%= link_to 'Cobas Reagent', cobas_reagent_path %> <br/>
+<%= link_to 'Vials', vials_stock_path %> <br/> 
+<%= "Hello #{current_user.name} from #{current_user.location}!" %>
